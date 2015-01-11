@@ -1,5 +1,10 @@
 # ljudge-ruby
 
+[![Gem Version](https://badge.fury.io/rb/ljudge-ruby.svg)](http://badge.fury.io/rb/ljudge-ruby)
+[![Code Climate](https://codeclimate.com/github/wormful/ljudge-ruby/badges/gpa.svg)](https://codeclimate.com/github/wormful/ljudge-ruby)
+[![Build Status](https://travis-ci.org/wormful/ljudge-ruby.svg)](https://travis-ci.org/wormful/ljudge-ruby)
+
+
 Ruby binding for [ljudge](https://github.com/quark-zju/ljudge)
 
 ## Installation

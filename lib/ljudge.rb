@@ -38,11 +38,11 @@ module Ljudge
   def self.to_option_str(hash)
     str = ""
     hash.each do |key, value|
+      option_name = key.to_s.gsub(/_/, '-')
       if value.is_a? Array
-        value.each { |args| str << '--' << key.to_s.gsub(/_/, '-') << ' ' << to_option_str(args) }
+        value.each { |args| str << "--#{option_name} #{to_option_str(args)}" }
       else
-        str << '--' << key.to_s.gsub(/_/, '-') << ' '
-        str << value.to_s << ' '
+        str << "--#{option_name} #{value.to_s} "
       end
     end
     str
