@@ -29,7 +29,7 @@ module Ljudge
     env.each { |key, value| command << "--env #{key} #{value} "}
     output = IO.popen(command, err: [:child, :out]).readlines.join
     begin
-      JSON::restore(output)
+      JSON::restore(output[0..output.rindex('}')])
     rescue JSON::ParserError
       output
     end

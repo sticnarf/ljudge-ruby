@@ -1,50 +1,22 @@
-# ljudge-ruby
+## 描述
 
-[![Gem Version](https://badge.fury.io/rb/ljudge-ruby.svg)](http://badge.fury.io/rb/ljudge-ruby)
-[![Code Climate](https://codeclimate.com/github/wormful/ljudge-ruby/badges/gpa.svg)](https://codeclimate.com/github/wormful/ljudge-ruby)
-[![Build Status](https://travis-ci.org/wormful/ljudge-ruby.svg)](https://travis-ci.org/wormful/ljudge-ruby)
+输入两个自然数，输出他们的和
 
+## 输入格式
 
-Ruby binding for [ljudge](https://github.com/quark-zju/ljudge)
+两个以空格分开的正整数`a`和`b`。
 
-## Installation
+## 输出格式
 
-First, install `ljudge` along with `lrun` referring to [ljudge project page](https://github.com/quark-zju/ljudge).
+一个正整数，即`a`和`b`的和。
 
-If you use bundler, add this line to your application's Gemfile:
+##样例输入
+>1 2
 
-```ruby
-gem 'ljudge'
+##样例输出
+>3
+
+##数据范围
 ```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install ljudge
-
-## Usage
-
-```ruby
-require 'ljudge'
-
-args = {
-  user_code: '/tmp/a.c',
-  checker_code: '/tmp/checker.rb',
-  testcase: [
-    { input: '/tmp/1.in', output: '/tmp/1.out' },
-    { input: '/tmp/2.in', output: '/tmp/2.out' }
-  ]
-}
-
-options = {
-  max_cpu_time: 1,
-  max_memory: 2**27,
-  max_compiler_cpu_time: 10
-}
-
-Ljudge.run(args, options)
-#=> {"checkerCompilation"=>{"log"=>"", "success"=>true}, "compilation"=>{"log"=>"", "success"=>true}, "testcases"=>[{"memory"=>131072, "result"=>"ACCEPTED", "time"=>0.001}, {"memory"=>221184, "result"=>"WRONG_ANSWER", "time"=>0.001}]}
+0 < x,\ y < 2^{31}
 ```
