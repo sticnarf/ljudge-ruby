@@ -27,7 +27,7 @@ module Ljudge
     command = "ljudge "
     command << to_option_str(args) << to_option_str(options)
     env.each { |key, value| command << "--env #{key} #{value} "}
-    output = IO.popen(command, err: [:child, :out]).readlines.join
+    output = IO.popen(command).readlines.join
     begin
       JSON::restore(output[output.index('{')..output.rindex('}')])
     rescue JSON::ParserError
